@@ -1,0 +1,29 @@
+{
+  "name": "full-stack-open-part-3",
+  "version": "1.0.0",
+  "description": "This is my repo for Part 3 of [Full Stack Open Course](https://fullstackopen.com/) by [University of Helsinki](https://www.helsinki.fi/en)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jrealmorillo/Full-Stack-Open-Part-3.git"
+  },
+  "author": "Jose Real",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jrealmorillo/Full-Stack-Open-Part-3/issues"
+  },
+  "homepage": "https://github.com/Jrealmorillo/Full-Stack-Open-Part-3#readme",
+  "dependencies": {
+    "express": "^4.19.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@flydotio/dockerfile": "^0.5.8",
+    "nodemon": "^3.1.4"
+  }
+}
