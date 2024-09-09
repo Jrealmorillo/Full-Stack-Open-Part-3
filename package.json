@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Jrealmorillo/Full-Stack-Open-Part-3#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.19.2",
     "morgan": "^1.10.0"
   },
