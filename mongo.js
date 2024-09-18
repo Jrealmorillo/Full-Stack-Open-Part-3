@@ -16,7 +16,11 @@ mongoose.set("strictQuery", false)
 mongoose.connect(url)
 
 const personSchema = new mongoose.Schema({
-    name: String,
+    name: {
+        type: String,
+        minLength: 3,
+        required: true
+    },
     number: String,
 })
 
@@ -28,10 +32,15 @@ if (process.argv.length > 3) {
         number: newNumber,
     })
 
-    person.save().then(result => {
-        console.log(`added ${person.name} number ${person.number} to phonebook`)
-        mongoose.connection.close()
-    })
+    person.save()
+        .then(result => {
+            console.log(`added ${person.name} number ${person.number} to phonebook`)
+            mongoose.connection.close()
+        })
+        .catch(error => {
+            console.error("Error adding person:", error.message);
+            mongoose.connection.close(); 
+        });
 }
 
 if (process.argv.length === 3) {
