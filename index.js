@@ -11,11 +11,11 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static("dist"));
 
-morgan.token("personName", function (req, res) {
+morgan.token("personName", function (req) {
   return req.body.name || "";
 });
 
-morgan.token("personNumber", function (req, res) {
+morgan.token("personNumber", function (req) {
   return req.body.number;
 });
 
@@ -56,7 +56,7 @@ app.get("/api/persons/:id", (request, response, next) => {
 
 app.delete("/api/persons/:id", (request, response, next) => {
   Person.findByIdAndDelete(request.params.id)
-    .then((result) => {
+    .then(() => {
       response.status(204).end();
     })
     .catch((error) => next(error));
